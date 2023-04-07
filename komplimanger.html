@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Komplimanggeneratorn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('https://i.pinimg.com/originals/5b/13/b1/5b13b13d0fd90363a5b62dea12cf67eb.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            margin: 5%;
+        }
+
+        h1 {
+            color: #000;
+            font-size: 3rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        #text {
+            color: #000;
+            font-size: 2rem;
+            margin-top: 5rem;
+            text-align: center;
+        }
+
+        #num-compliments {
+            color: #000;
+            font-size: 1.2rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Slumpmässiga komplimanger och ord</h1>
+    <p id="text"></p>
+    <p id="num-compliments"></p>
+
+    <button onclick="generateCompliment()">Generera komplimang</button>
+</div>
+
+<script>
+    var komplimanger = [
+        "fantastisk",
+        "smart och begåvad",
+        "fantastisk personlighet",
+        "vackert leende",
+        "sprider glädje och positivitet",
+        "unik och intressant personlighet",
+        "en inspirationskälla för andra",
+        "fantastisk förmåga att lyssna och förstå",
+        "en underbar själ och ett hjärta av guld",
+        "en strålande person",
+        "en pärla",
+        "en av de mest älskvärda människor jag känner",
+        "en person med en oändlig källa av positiv energi",
+        "en beundransvärd person",
+        "en mycket begåvad person",
+        "en person med en fantastisk karaktär",
+        "en person med en oerhört positiv attityd",
+        "en person som gör skillnad",
+        "en person med en strålande personlighet",
+        "en person med en stor hjärna",
+        "en person som får andra att må bra",
+        "en person med en fantastisk kreativ förmåga",
+        "en person med en lysande personlighet",
+        "en person med en fantastisk sinne för humor",
+        "en person som är modig och står upp för vad hen tror på"
+    ];
+
+    var ord = [
+        "härlig",
+        "fantastisk",
+        "förbluffande",
+        "inspirerande",
+        "enastående",
+        "underbar",
+        "fantastisk",
+        "exceptionell",
+        "enastående",
+        "upplyftande",
+        "fantastisk",
+        "oslagbar",
+        "utmärkt",
+        "genial",
+        "fantastisk",
+        "fantastisk",
+        "fantastisk",
+        "förtjusande",
+        "imponerande",
+        "fantastisk",
+        "strålande",
+        "storslagen",
+        "magnifik",
+        "fantastisk",
+        "briljant",
+        "fenomenal",
+        "stark",
+        "fantastisk",
+        "otrolig",
+        "imponerande",
+        "fenomenal",
+        "häftig",
+        "fantastisk",
+        "enormt imponerande"
+    ];
+
+    var tredjeAlternativ = [
+        "du har en fantastisk humor",
+        "du har en förmåga att få andra att känna sig bekväma",
+        "du är en stor inspirationskälla",
+        "du har en lysande kreativ förmåga",
+        "du är en mycket pålitlig person",
+        "du har en härlig röst",
+        "du är en fantastisk lärare",
+        "du har en oändlig källa av visdom",
+        "du har en underbar förmåga att kommunicera med andra",
+        "du har en förmåga att göra skillnad i världen",
+        "du har en fantastisk personlighet",
+        "du har en fantastisk självkänsla",
+        "du är en mycket stark person",
+        "du är en mycket kreativ person",
+        "du är en mycket modig person",
+        "du har en förmåga att se det bästa i andra",
+        "du är en mycket omtänksam person",
+        "du är en mycket generös person",
+        "du har en fantastisk sinne för humor",
+        "du är en person med stort hjärta",
+        "du är en person som alltid finns där för andra",
+        "du är en person med en fantastisk karaktär",
+        "du är en person som gör skillnad i andras liv",
+        "du är en person med stor integritet",
+        "du har en fantastisk förmåga att lösa problem",
+        "du har en fantastisk känsla för stil",
+        "du har en fantastisk förmåga att organisera",
+        "du har en fantastisk talang för att lyssna",
+        "du är en person med fantastiskt tålamod",
+        "du har en fantastisk förmåga att se det stora perspektivet"
+    ];
+
+    function generateCompliment() {
+        var rand1 = Math.floor(Math.random() * komplimanger.length);
+        var rand2 = Math.floor(Math.random() * ord.length);
+        var rand3 = Math.floor(Math.random() * tredjeAlternativ.length);
+
+        var text = "Du är " + ord[rand2] + ", " + komplimanger[rand1] + " och " + tredjeAlternativ[rand3] + "!";
+        document.getElementById("text").innerHTML = text;
+
+        var numCompliments = komplimanger.length * ord.length * tredjeAlternativ.length;
+        document.getElementById("num-compliments").innerHTML = "Det finns " + numCompliments + " möjliga kombinationer av komplimanger och ord på den här sidan.";
+    }
+</script>
